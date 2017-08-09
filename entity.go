@@ -70,7 +70,11 @@ func (e *Entity) HasID() bool {
 func (e *Entity) LoadFromInput(msg []byte) bool {
 	e.MapInput(msg)
 	var stored Entity
-	db.Where("user_id = ? AND resource_id = ? AND resource_type = ? AND role = ?", e.UserID, e.ResourceID, e.ResourceType, e.Role).First(&stored)
+	if e.ID > 0 {
+		db.Where("id = ?", e.ID).First(&stored)
+	} else {
+		db.Where("user_id = ? AND resource_id = ? AND resource_type = ? AND role = ?", e.UserID, e.ResourceID, e.ResourceType, e.Role).First(&stored)
+	}
 
 	if &stored == nil {
 		return false
