@@ -83,6 +83,7 @@ func (e *Entity) LoadFromInput(msg []byte) bool {
 		return false
 	}
 
+	e.ID = stored.ID
 	e.UserID = stored.UserID
 	e.ResourceID = stored.ResourceID
 	e.ResourceType = stored.ResourceType
@@ -110,7 +111,11 @@ func (e *Entity) LoadFromInputOrFail(msg *nats.Msg, h *natsdb.Handler) bool {
 func (e *Entity) Update(body []byte) error {
 	e.MapInput(body)
 	stored := Entity{}
-	db.Where("user_id = ? AND resource_id = ? AND resource_type = ?", e.UserID, e.ResourceID, e.ResourceType).First(&stored)
+	if e.ID > 0 {
+		db.Where("id = ?", e.ID).First(&stored)
+	} else {
+		db.Where("user_id = ? AND resource_id = ? AND resource_type = ?", e.UserID, e.ResourceID, e.ResourceType).First(&stored)
+	}
 
 	stored.Role = e.Role
 
