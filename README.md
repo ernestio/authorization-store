@@ -1,11 +1,9 @@
 # Authorization Store
 
+master:  [![CircleCI](https://circleci.com/gh/ernestio/authorization-store/tree/master.svg?style=shield)](https://circleci.com/gh/ernestio/authorization-store/tree/master)  
+develop: [![CircleCI](https://circleci.com/gh/ernestio/authorization-store/tree/develop.svg?style=shield)](https://circleci.com/gh/ernestio/authorization-store/tree/develop)
+
 Authorization store is intended to be a data store to track the lifetime of specific resource types. 
-
-## Build status
-
-* master:  [![CircleCI Master](https://circleci.com/gh/ernestio/authorization-store/tree/master.svg?style=svg)](https://circleci.com/gh/ernestio/authorization-store/tree/master)
-* develop: [![CircleCI Develop](https://circleci.com/gh/ernestio/authorization-store/tree/develop.svg?style=svg)](https://circleci.com/gh/ernestio/authorization-store/tree/develop)
 
 ## Installation
 
