@@ -34,14 +34,14 @@ func (Entity) TableName() string {
 // will perform a search on the database
 func (e *Entity) Find() (list []interface{}) {
 	entities := []Entity{}
-	if e.UserID == "" {
+	if e.Role == "" && e.ResourceID == "" && e.UserID == "" {
+		db.Find(&entities)
+	} else if e.UserID == "" {
 		db.Where("resource_id = ? AND resource_type = ?", e.ResourceID, e.ResourceType).Find(&entities)
 	} else if e.ResourceID == "" {
 		db.Where("user_id = ? AND resource_type = ?", e.UserID, e.ResourceType).Find(&entities)
 	} else if e.Role == "" {
 		db.Where("user_id = ? AND resource_id = ? AND resource_type = ?", e.UserID, e.ResourceID, e.ResourceType).Find(&entities)
-	} else if e.Role == "" && e.ResourceID == "" && e.UserID == "" {
-		db.Find(&entities)
 	} else {
 		db.Where("user_id = ? AND resource_id = ? AND resource_type = ? AND role = ?", e.UserID, e.ResourceID, e.ResourceType, e.Role).Find(&entities)
 	}
