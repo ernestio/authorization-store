@@ -40,6 +40,8 @@ func (e *Entity) Find() (list []interface{}) {
 		db.Where("user_id = ? AND resource_type = ?", e.UserID, e.ResourceType).Find(&entities)
 	} else if e.Role == "" {
 		db.Where("user_id = ? AND resource_id = ? AND resource_type = ?", e.UserID, e.ResourceID, e.ResourceType).Find(&entities)
+	} else if e.Role == "" && e.ResourceID == "" && e.UserID == "" {
+		db.Find(&entities)
 	} else {
 		db.Where("user_id = ? AND resource_id = ? AND resource_type = ? AND role = ?", e.UserID, e.ResourceID, e.ResourceType, e.Role).Find(&entities)
 	}
