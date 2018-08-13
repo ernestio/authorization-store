@@ -3,84 +3,110 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:6078f921de2a68b6afbc31dfa1684d600966f4c332063e8daef61758b6a6094e"
   name = "github.com/ernestio/ernest-config-client"
   packages = ["."]
-  revision = "3ae64ad7b8e5b19b31ff8a8e0bedcf807989e42e"
+  pruneopts = ""
+  revision = "9588aab91bdf53d2fa430f9505b33457d3fcb3bc"
 
 [[projects]]
+  digest = "1:d5c1692d62c22b9ff5248d1c5f3850d06f7bc850f9ae6eec15c6601f774eef4f"
   name = "github.com/jinzhu/gorm"
   packages = [
     ".",
-    "dialects/postgres"
+    "dialects/postgres",
   ]
+  pruneopts = ""
   revision = "5174cc5c242a728b435ea2be8a2f7f998e15429b"
   version = "v1.0"
 
 [[projects]]
   branch = "master"
+  digest = "1:a0c0f06f12f4b83b89eec79114265c54e9e300b8ddda0f0f3fb49a685283fa6c"
   name = "github.com/jinzhu/inflection"
   packages = ["."]
+  pruneopts = ""
   revision = "1c35d901db3da928c72a72d8458480cc9ade058f"
 
 [[projects]]
   branch = "master"
+  digest = "1:dc51bf7a11cb8b9606b7e719b66a78f46f603cb28e1733a655f7efb2ea2ce871"
   name = "github.com/lib/pq"
   packages = [
     ".",
     "hstore",
-    "oid"
+    "oid",
   ]
+  pruneopts = ""
   revision = "19c8e9ad00952ce0c64489b60e8df88bb16dd514"
 
 [[projects]]
+  digest = "1:041b5feb478117b749b789dff3ff6312ae652aa9460fb1cbc2cf59ea4fac59d5"
   name = "github.com/nats-io/go-nats"
   packages = [
     ".",
     "encoders/builtin",
-    "util"
+    "util",
   ]
+  pruneopts = ""
   revision = "d66cb54e6b7bdd93f0b28afc8450d84c780dfb68"
   version = "v1.4.0"
 
 [[projects]]
+  digest = "1:be61e8224b84064109eaba8157cbb4bbe6ca12443e182b6624fdfa1c0dcf53d9"
   name = "github.com/nats-io/nuid"
   packages = ["."]
+  pruneopts = ""
   revision = "289cccf02c178dc782430d534e3c1f5b72af807f"
   version = "v1.0.0"
 
 [[projects]]
   branch = "master"
+  digest = "1:c21600df12e3d20bfbbf7457d244d6c6d9690ca88ec64f6412977995c06cdda5"
   name = "github.com/r3labs/akira"
   packages = ["."]
+  pruneopts = ""
   revision = "8754167cb7b314671eb1e2abf2e9465f2e3d5ad4"
 
 [[projects]]
   branch = "master"
+  digest = "1:34a3ae62da989fc414c3bf1da5907f9e32f6796bebdac5c9cb017a1662669c06"
   name = "github.com/r3labs/natsdb"
   packages = ["."]
+  pruneopts = ""
   revision = "bdbb5c758f58411867634adcb638b77f4221790f"
 
 [[projects]]
   branch = "v1"
+  digest = "1:105ec809d993ab248d801e6daef5634115218dec8f77bcbc55f07a97d655ddad"
   name = "gopkg.in/bsm/ratelimit.v1"
   packages = ["."]
+  pruneopts = ""
   revision = "db14e161995a5177acef654cb0dd785e8ee8bc22"
 
 [[projects]]
+  digest = "1:6651284988a9d46d55a68413bdf9850558ee440642449d269f16dbc32a2d3b88"
   name = "gopkg.in/redis.v3"
   packages = [
     ".",
     "internal",
     "internal/consistenthash",
     "internal/hashtag",
-    "internal/pool"
+    "internal/pool",
   ]
+  pruneopts = ""
   revision = "b5e368500d0a508ef8f16e9c2d4025a8a46bcc29"
   version = "v3.6.4"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "f3b6876fc093f68f5ac54df007d35fafac1456f60823666367e7a84789da434a"
+  input-imports = [
+    "github.com/ernestio/ernest-config-client",
+    "github.com/jinzhu/gorm",
+    "github.com/jinzhu/gorm/dialects/postgres",
+    "github.com/nats-io/go-nats",
+    "github.com/r3labs/natsdb",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
